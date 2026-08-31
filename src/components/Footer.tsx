@@ -114,18 +114,18 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-brand-border py-5">
+      <div className="bg-brand-navy py-5">
         <Container>
-          <p className="text-center text-xs text-slate-500">
+          <p className="text-center text-xs text-white/70">
             © {new Date().getFullYear()} {shop.name} – {shop.tagline}. All
             rights reserved.
           </p>
-          <p className="mt-1.5 text-center text-xs text-slate-400">
+          <p className="mt-1.5 text-center text-xs text-white/50">
             Thiết kế & lập trình bởi Nguyễn Quốc Huy
           </p>
-          <p className="mt-0.5 text-center text-xs text-slate-400">
+          <p className="mt-0.5 text-center text-xs text-white/50">
             Nếu bạn cần tư vấn làm Website liên hệ SĐT/Zalo{" "}
-            <a href="tel:0397180247" className="hover:text-brand-orange">
+            <a href="tel:0397180247" className="text-brand-orange hover:text-white">
               0397 180 247
             </a>
           </p>
