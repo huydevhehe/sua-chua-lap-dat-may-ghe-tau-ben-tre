@@ -4,6 +4,7 @@ export type Service = {
   description: string;
   icon: "engine" | "gear" | "wrench" | "propeller" | "plug" | "bolt";
   bullets: string[];
+  image?: string;
 };
 
 export const services: Service[] = [
@@ -17,6 +18,7 @@ export const services: Service[] = [
       "Kiểm tra, căn chỉnh toàn bộ hệ thống",
       "Thay thế phụ tùng chính hãng",
     ],
+    image: "/images/products/cummins-nta855.jpg",
   },
   {
     slug: "thay-bac-bien-dai-tu-may",
@@ -28,6 +30,7 @@ export const services: Service[] = [
       "Đo kiểm, căn chỉnh chính xác",
       "Bảo hành kỹ thuật sau khi thay",
     ],
+    image: "/images/products/cummins-6bta5-9.jpg",
   },
   {
     slug: "bao-tri-dinh-ky",
@@ -39,6 +42,7 @@ export const services: Service[] = [
       "Vệ sinh, thay nhớt, lọc dầu, lọc gió",
       "Tư vấn sử dụng, vận hành hiệu quả",
     ],
+    image: "/images/products/yanmar-6ly3-stp.jpg",
   },
   {
     slug: "sua-chan-vit-he-thong-lai",
@@ -50,6 +54,7 @@ export const services: Service[] = [
       "Căn chỉnh bằng máy chuyên dụng",
       "Đánh bóng chống bám hà",
     ],
+    image: "/images/gallery/g4.jpg",
   },
   {
     slug: "sua-he-thong-nhien-lieu",
@@ -61,6 +66,7 @@ export const services: Service[] = [
       "Vệ sinh, hiệu chỉnh kim phun",
       "Phục hồi turbo tăng áp",
     ],
+    image: "/images/products/isuzu-6bg1.jpg",
   },
   {
     slug: "sua-dien-may-tau",
@@ -72,5 +78,6 @@ export const services: Service[] = [
       "Sửa chữa, thay thế linh kiện",
       "Đảm bảo an toàn điện",
     ],
+    image: "/images/gallery/g5.jpg",
   },
 ];

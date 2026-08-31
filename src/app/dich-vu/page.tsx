@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -57,10 +58,22 @@ export default function DichVuPage() {
                 key={service.slug}
                 className="grid grid-cols-1 gap-6 rounded-xl border border-brand-border bg-white p-6 shadow-sm sm:grid-cols-[220px_1fr_auto] sm:items-center"
               >
-                <PlaceholderImage
-                  label={service.title}
-                  className="aspect-video w-full rounded-lg sm:aspect-square"
-                />
+                {service.image ? (
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg sm:h-[160px] sm:w-[220px]">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="(min-width: 640px) 220px, 100vw"
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                ) : (
+                  <PlaceholderImage
+                    label={service.title}
+                    className="aspect-video w-full rounded-lg sm:aspect-square"
+                  />
+                )}
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-navy/10 text-brand-navy">
