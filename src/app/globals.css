@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f8fc;
+  --foreground: #10233f;
+
+  --color-brand-navy: #0f2c56;
+  --color-brand-navy-dark: #0a1f3d;
+  --color-brand-orange: #f5750e;
+  --color-brand-orange-dark: #dd6400;
+  --color-brand-bg: #f5f8fc;
+  --color-brand-border: #e3e9f2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-navy: var(--color-brand-navy);
+  --color-brand-navy-dark: var(--color-brand-navy-dark);
+  --color-brand-orange: var(--color-brand-orange);
+  --color-brand-orange-dark: var(--color-brand-orange-dark);
+  --color-brand-bg: var(--color-brand-bg);
+  --color-brand-border: var(--color-brand-border);
+  --font-sans: var(--font-be-vietnam-pro);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
