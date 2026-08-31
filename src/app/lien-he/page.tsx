@@ -34,52 +34,153 @@ export default function LienHePage() {
       {/* Danh sách liên hệ + form */}
       <section className="bg-white py-16 sm:py-20">
         <Container>
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
-            <ul className="flex flex-col gap-5">
-              {contactInfo.map((item) => (
-                <li key={item.label} className="flex items-start gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange">
-                    <Icon name={item.icon} className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-500">{item.label}</p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target={item.href.startsWith("http") ? "_blank" : undefined}
-                        rel="noopener noreferrer"
-                        className="text-base font-bold text-brand-navy hover:text-brand-orange"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-base font-bold text-brand-navy">{item.value}</p>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+            {/* Cột trái: Thẻ thông tin liên hệ Doanh Nghiệp Sang Trọng */}
+            <div className="flex flex-col gap-5 lg:col-span-5">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
+                <div className="border-b border-slate-100 pb-4">
+                  <h3 className="text-xl font-bold tracking-tight text-slate-900">
+                    Thông tin liên hệ
+                  </h3>
+                  <p className="mt-1 text-xs text-slate-500">
+                    Xưởng sửa chữa & Lắp đặt máy ghe tàu Chú Bình
+                  </p>
+                </div>
 
-            <ContactForm />
+                <div className="mt-6 flex flex-col gap-4">
+                  {/* Hotline */}
+                  <a
+                    href={`tel:${shop.phone}`}
+                    className="group flex items-start gap-4 rounded-xl border border-slate-200/90 bg-slate-50/60 p-4 transition-all duration-200 hover:border-brand-navy hover:bg-slate-50 hover:shadow-xs"
+                  >
+                    <Icon name="phone" className="h-10 w-10 shrink-0 shadow-xs rounded-full" />
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                          Điện thoại (Hotline 24/7)
+                        </p>
+                        <span className="text-xs font-semibold text-brand-orange group-hover:underline">
+                          Gọi ngay →
+                        </span>
+                      </div>
+                      <p className="mt-1 text-base font-bold text-slate-900">
+                        {shop.phoneDisplay}
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* Zalo */}
+                  <a
+                    href={shop.zaloLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-4 rounded-xl border border-slate-200/90 bg-slate-50/60 p-4 transition-all duration-200 hover:border-blue-500 hover:bg-slate-50 hover:shadow-xs"
+                  >
+                    <Icon name="zalo" className="h-10 w-10 shrink-0 shadow-xs rounded-full" />
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                          Nhắn tin Zalo
+                        </p>
+                        <span className="text-xs font-semibold text-blue-600 group-hover:underline">
+                          Mở Zalo →
+                        </span>
+                      </div>
+                      <p className="mt-1 text-base font-bold text-slate-900">
+                        {shop.phoneDisplay}
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* Địa chỉ */}
+                  <div className="flex items-start gap-4 rounded-xl border border-slate-200/90 bg-slate-50/60 p-4">
+                    <Icon name="mappin" className="h-10 w-10 shrink-0 shadow-xs rounded-full" />
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        Địa chỉ cơ sở
+                      </p>
+                      <p className="mt-1 text-sm font-bold text-slate-900 leading-snug">
+                        {shop.address}
+                      </p>
+                      <p className="mt-1.5 text-xs text-slate-500 leading-normal">
+                        {shop.mergedAddressNote}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Giờ làm việc */}
+                  <div className="flex items-start gap-4 rounded-xl border border-slate-200/90 bg-slate-50/60 p-4">
+                    <Icon name="clock" className="h-10 w-10 shrink-0 shadow-xs rounded-full" />
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        Thời gian làm việc
+                      </p>
+                      <p className="mt-1 text-sm font-bold text-slate-900">
+                        {shop.hours}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Facebook */}
+                  <a
+                    href={`https://${shop.facebook}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-4 rounded-xl border border-slate-200/90 bg-slate-50/60 p-4 transition-all duration-200 hover:border-blue-600 hover:bg-slate-50 hover:shadow-xs"
+                  >
+                    <Icon name="facebook" className="h-10 w-10 shrink-0 shadow-xs rounded-full" />
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                          Fanpage Facebook
+                        </p>
+                        <span className="text-xs font-semibold text-blue-600 group-hover:underline">
+                          Truy cập →
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs font-bold text-slate-800 truncate max-w-[200px]">
+                        {shop.facebook}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Cột phải: Form gửi yêu cầu */}
+            <div className="lg:col-span-7">
+              <ContactForm />
+            </div>
           </div>
         </Container>
       </section>
 
       {/* Map + quick contact */}
       <section className="bg-brand-bg py-16 sm:py-20">
-        <Container className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
+        <Container className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_360px]">
           <iframe
             title="Bản đồ vị trí cửa hàng"
             src={shop.mapEmbedUrl}
-            className="min-h-[320px] w-full rounded-xl border border-brand-border"
+            className="min-h-[360px] w-full rounded-xl border border-brand-border"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
-          <div className="rounded-xl border border-brand-border bg-white p-6">
+          <div className="rounded-xl border border-brand-border bg-white p-6 shadow-xs">
             <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-brand-navy">
-              Thông tin liên hệ nhanh
+              Thông tin vị trí & liên hệ
             </h3>
             <ul className="mt-4 flex flex-col gap-4">
+              <li className="flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-100 text-brand-orange">
+                  <Icon name="mappin" className="h-4 w-4" />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold text-slate-500">Địa chỉ chính thức</p>
+                  <p className="text-xs font-bold text-brand-navy leading-relaxed">
+                    {shop.address}
+                  </p>
+                </div>
+              </li>
               <li className="flex items-start gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
                   <Icon name="phone" className="h-4 w-4" />
@@ -99,17 +200,6 @@ export default function LienHePage() {
                   <p className="text-xs font-semibold text-slate-500">Nhắn Zalo</p>
                   <a href={shop.zaloLink} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-brand-navy hover:text-brand-orange">
                     {shop.phoneDisplay}
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
-                  <Icon name="facebook" className="h-4 w-4" />
-                </span>
-                <div>
-                  <p className="text-xs font-semibold text-slate-500">Facebook</p>
-                  <a href={`https://${shop.facebook}`} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-brand-navy hover:text-brand-orange">
-                    {shop.facebook}
                   </a>
                 </div>
               </li>
