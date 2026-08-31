@@ -120,6 +120,15 @@ export function Footer() {
             © {new Date().getFullYear()} {shop.name} – {shop.tagline}. All
             rights reserved.
           </p>
+          <p className="mt-1.5 text-center text-xs text-slate-400">
+            Thiết kế & lập trình bởi Nguyễn Quốc Huy
+          </p>
+          <p className="mt-0.5 text-center text-xs text-slate-400">
+            Nếu bạn cần tư vấn làm Website liên hệ SĐT/Zalo{" "}
+            <a href="tel:0397180247" className="hover:text-brand-orange">
+              0397 180 247
+            </a>
+          </p>
         </Container>
       </div>
     </footer>
