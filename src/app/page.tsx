@@ -167,7 +167,7 @@ export default function Home() {
           <div className="mt-10 grid grid-cols-1 gap-6 overflow-hidden rounded-xl border border-brand-border bg-white shadow-sm lg:grid-cols-2">
             <iframe
               title="Bản đồ vị trí cửa hàng"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(shop.address)}&output=embed`}
+              src={shop.mapEmbedUrl}
               className="min-h-[280px] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -178,6 +178,7 @@ export default function Home() {
                 <div>
                   <p className="text-sm font-bold text-brand-navy">Địa chỉ</p>
                   <p className="text-sm text-slate-600">{shop.address}</p>
+                  <p className="mt-1 text-xs text-slate-400">{shop.oldAddress}</p>
                 </div>
               </div>
               <div className="flex gap-3">
