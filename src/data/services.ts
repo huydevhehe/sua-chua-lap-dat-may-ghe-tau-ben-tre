@@ -8,9 +8,9 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "sua-may-yanmar",
-    title: "Sửa máy Yanmar",
-    description: "Sửa chữa, đại tu tất cả các dòng máy Yanmar chính hãng.",
+    slug: "sua-may-thuy",
+    title: "Sửa máy thủy, máy ghe, máy dầu ",
+    description: "Sửa chữa, đại tu tất cả các dòng máy thủy, máy ghe tàu máy dầu chính hãng.",
     icon: "engine",
     bullets: [
       "Sửa chữa lỗi khó nổ, khói đen, hao dầu",
@@ -53,7 +53,7 @@ export const services: Service[] = [
   },
   {
     slug: "sua-he-thong-nhien-lieu",
-    title: "Sửa hệ thống nhiên liệu",
+    title: "Sửa hệ thống nhiên liệu thay nhớt",
     description: "Sửa bơm, kim phun, hệ sinh nhiên liệu, tiết kiệm nhiên liệu.",
     icon: "plug",
     bullets: [

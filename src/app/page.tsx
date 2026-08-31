@@ -23,18 +23,18 @@ export default function Home() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/55 via-brand-navy/15 to-transparent" />
         <Container className="relative py-24 sm:py-32">
           <div className="max-w-xl">
-            <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-4xl lg:text-5xl">
               SỬA CHỮA MÁY MÓC
               <br />
               <span className="text-brand-orange">GHE TÀU SÔNG NƯỚC</span>
             </h1>
-            <p className="mt-4 text-lg font-semibold text-white/90">
+            <p className="mt-4 text-lg font-semibold text-white drop-shadow">
               {shop.slogan}
             </p>
-            <p className="mt-4 flex items-start gap-2 text-white/80">
+            <p className="mt-4 flex items-start gap-2 text-white drop-shadow">
               <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-brand-orange" />
               <span>
                 Hơn <strong className="text-white">{shop.yearsExperience} năm</strong>{" "}

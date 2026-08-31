@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { Icon } from "@/components/Icon";
 import { ContactForm } from "@/components/ContactForm";
@@ -22,24 +22,12 @@ const contactInfo = [
 export default function LienHePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-navy py-12 sm:py-16">
-        <Image
-          src="/images/banner-lien-he.png"
-          alt="Liên hệ Chú Bình"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/55 to-transparent" />
-        <Container className="relative">
-          <h1 className="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl">
-            Liên hệ với chúng tôi
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
-            {shop.name} luôn sẵn sàng hỗ trợ, tư vấn và giải đáp mọi thắc mắc về
-            dịch vụ sửa chữa máy ghe tàu và các sản phẩm máy móc.
-          </p>
-        </Container>
-      </section>
+      <PageHero
+        currentLabel="Liên hệ"
+        title="Liên hệ với chúng tôi"
+        description={`${shop.name} luôn sẵn sàng hỗ trợ, tư vấn và giải đáp mọi thắc mắc về dịch vụ sửa chữa máy ghe tàu và các sản phẩm máy móc.`}
+        image="/images/banner-lien-he.png"
+      />
 
       <section className="py-16 sm:py-20">
         <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[320px_1fr]">
@@ -74,9 +62,13 @@ export default function LienHePage() {
 
       <section className="bg-brand-bg py-16 sm:py-20">
         <Container>
-          <div className="flex min-h-[320px] items-center justify-center rounded-xl border border-brand-border bg-white text-slate-400">
-            <span className="text-sm">Bản đồ Google Maps</span>
-          </div>
+          <iframe
+            title="Bản đồ vị trí cửa hàng"
+            src={shop.mapEmbedUrl}
+            className="min-h-[320px] w-full rounded-xl border border-brand-border"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </Container>
       </section>
     </>
